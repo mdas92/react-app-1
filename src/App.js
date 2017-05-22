@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 var Banner=React.createClass({
   render: function() {
     return (
@@ -50,3 +51,9 @@ render(i){
  			</div>,
  			document.getElementById('root')
   			); 
+=======
+ReactDOM.render(
+			<h1>Hello World</h1>,
+			document.getElementById('root')
+			);
+>>>>>>> origin/master

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 var Banner = React.createClass({
 	render: function () {
 		return React.createElement(
@@ -84,4 +85,10 @@ ReactDOM.render(React.createElement(
 	React.createElement(Navbar, null),
 	React.createElement(Banner, null),
 	React.createElement(Login, null)
+=======
+ReactDOM.render(React.createElement(
+			'h1',
+			null,
+			'Hello World'
+>>>>>>> origin/master
 ), document.getElementById('root'));
