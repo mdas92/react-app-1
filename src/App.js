@@ -1,6 +1,5 @@
 
-
 ReactDOM.render(
-			<h1>This is index.html</h1>,
-			document.getElementById('example')
+			<h1>Hello World</h1>,
+			document.getElementById('root')
 			);
