@@ -1,13 +1,24 @@
+"use strict";
+
+/*import React from 'react';
+import ReactDOM from 'react-dom';
+import Banner from './lib/App';
+import Login from './lib/Login';
+import Navbar from './lib/Navbar';
+import './index.css'; 
+import logo from '../ar/flogo.svg';*/
 
 var Banner = React.createClass({
-	render: function () {
+	displayName: "Banner",
+
+	render: function render() {
 		return React.createElement(
 			"div",
 			{ id: "banner", className: "Banner" },
 			React.createElement(
 				"div",
 				{ className: "App-header" },
-				React.createElement("img", { src: "flogo.svg", className: "App-logo", alt: "logo" })
+				React.createElement("img", { src: "./ar/flogo.svg", className: "App-logo", alt: "logo" })
 			),
 			React.createElement(
 				"h2",
@@ -17,8 +28,11 @@ var Banner = React.createClass({
 		);
 	}
 });
+
 var Login = React.createClass({
-	render: function () {
+	displayName: "Login",
+
+	render: function render() {
 		return React.createElement(
 			"div",
 			{ id: "login", className: "text-center " },
@@ -58,13 +72,17 @@ var Login = React.createClass({
 });
 
 var Navbar = React.createClass({
-	render(i) {
-		const pages = ['Home', 'Logout'];
-		const pageList = pages.map(page => React.createElement(
-			"a",
-			{ key: 'page_' + page + i, className: "navbar-brand", href: "#" },
-			page
-		));
+	displayName: "Navbar",
+
+	render: function render(i) {
+		var pages = ['Home', 'Logout'];
+		var pageList = pages.map(function (page) {
+			return React.createElement(
+				"a",
+				{ key: 'page_' + page + i, className: "navbar-brand", href: "#" },
+				page
+			);
+		});
 		return React.createElement(
 			"div",
 			{ id: "nav", className: "nav navbar-inverse navbar-top" },
@@ -79,7 +97,7 @@ ReactDOM.render(React.createElement(
 	React.createElement(
 		"h1",
 		null,
-		"Hello, World"
+		"Hello World"
 	),
 	React.createElement(Navbar, null),
 	React.createElement(Banner, null),

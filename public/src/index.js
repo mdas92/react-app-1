@@ -1,16 +1,25 @@
+/*import React from 'react';
+import ReactDOM from 'react-dom';
+import Banner from './lib/App';
+import Login from './lib/Login';
+import Navbar from './lib/Navbar';
+import './index.css'; 
+import logo from '../ar/flogo.svg';*/
 
-var Banner=React.createClass({
+var Banner = React.createClass({
   render: function() {
     return (
       <div id="banner" className="Banner">
         <div className="App-header">
-          <img src="flogo.svg" className="App-logo" alt="logo" />
+          <img src="./ar/flogo.svg" className="App-logo" alt="logo" />
         </div>
         <h2>Welcome to FIHM</h2>
       </div>
     );
   }
 });
+
+
 var Login = React.createClass({
 render: function(){
 	return (
@@ -31,8 +40,9 @@ render: function(){
 	}
 });
 
-var Navbar =React.createClass({
-render(i){
+
+var Navbar = React.createClass({
+render: function(i){
 	const pages=['Home','Logout'];
 	const pageList = pages.map((page) =>
 	  <a key={'page_'+page+i} className="navbar-brand" href="#">{page}</a>
@@ -41,12 +51,12 @@ render(i){
 	}
 });
 
- ReactDOM.render(
- 		<div>
- 			<h1>Hello, World</h1>
- 			<Navbar />
- 			<Banner />
- 			<Login />
- 			</div>,
- 			document.getElementById('root')
-  			); 
+ReactDOM.render(
+  <div>
+  <h1>Hello World</h1>
+  	<Navbar />
+  	<Banner />
+  	<Login />
+  </div>,
+   document.getElementById('root')
+);
