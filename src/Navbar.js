@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import '../css/App.css';
 
-class Navbar extends Component {
+var Navbar =React.createClass({
 render(i){
 	const pages=['Home','Logout'];
 	const pageList = pages.map((page) =>
@@ -9,6 +7,4 @@ render(i){
 	);
 	return <div id="nav" className="nav navbar-inverse navbar-top">{pageList}</div>;
 	}
-};
-
-export default Navbar;
+});
