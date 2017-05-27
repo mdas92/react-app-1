@@ -5,8 +5,9 @@ var BookingArea = React.createClass({
 	handleAdd(e){
 		e.preventDefault();
 		console.log("handling..");
-		this.setState({message: "Handled submit."})
-		//this.sendBookingData();
+		//return;
+		//this.setState({message: "Handled submit."})
+		this.sendBookingData();
 	},
 	sendBookingData: function () {
 		  // Fetch form values.
@@ -23,6 +24,7 @@ var BookingArea = React.createClass({
 		  var _this = this;
 		  xmlhttp.onreadystatechange = function() {
 		    if (xmlhttp.readyState === 4) {
+		      console.log("Response text:"+xmlhttp.responseText);
 		      var response = JSON.parse(xmlhttp.responseText);
 		      if (xmlhttp.status === 200 && response.status === 'OK') {
 		        _this.setState({ message: 'Submitted.' });
@@ -49,7 +51,7 @@ var BookingArea = React.createClass({
 	render(){
 	if(this.props.type == 'Add Booking')
 		var bookingArea = (
-			<form id="addbookingform" className="col-flex-container">
+			<form id="addbookingform" className="col-flex-container" onSubmit={this.handleAdd}>
 				<div className="flex-item">
 					<label >Name:</label>
 					<input type="text" className="form-control" ref="name"/><br/>
@@ -67,7 +69,7 @@ var BookingArea = React.createClass({
 					<input type="text" className="form-control" ref="amount"/><br/>
 				</div>
 				<div className="flex-item">
-					<button type="submit" form="addbookingform" className="btn btn-success btn-lg" value="Submit" onSubmit={this.handleAdd}>
+					<button type="submit" form="addbookingform" className="btn btn-success btn-lg" value="Submit" >
 					Submit</button>
 				</div>
 				<br/><br/>
